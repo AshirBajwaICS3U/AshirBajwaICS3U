@@ -23,8 +23,8 @@ def check_collision(player, walls):
 pygame.init()
 
 # Set screen resolution
-SCREEN_WIDTH = 600
-SCREEN_HEIGHT = 400
+SCREEN_WIDTH = 850
+SCREEN_HEIGHT = 900
 
 # Create the game window
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -44,18 +44,54 @@ player_size = 25
 speed = 3
 
 # Create the exit
-exit_rect = pygame.Rect(540, 340, 30, 30)
+exit_rect = pygame.Rect(800, 850, 30, 30)
 
 # Create the maze walls
 walls = [
-    pygame.Rect(100, 0, 20, 300),
-    pygame.Rect(200, 100, 20, 300),
-    pygame.Rect(300, 0, 20, 250),
-    pygame.Rect(400, 100, 20, 300),
-    pygame.Rect(500, 0, 20, 250)
+    pygame.Rect(75, 50, 20, 150),
+    pygame.Rect(75, 50, 160, 20),
+    pygame.Rect(150, 50, 20, 75),
+    pygame.Rect(150, 125, 175, 20),
+    pygame.Rect(305, 50, 20, 75),
+    pygame.Rect(320, 125, 175, 20),
+    pygame.Rect(475, 50, 20, 90),
+    pygame.Rect(390, 0, 20, 75),
+    pygame.Rect(490, 50, 225, 20),
+    pygame.Rect(390, 145, 20, 75),
+    pygame.Rect(390, 215, 105, 20),
+    pygame.Rect(475, 225, 20, 90),
+    pygame.Rect(575, 125, 20, 110),
+    pygame.Rect(575, 125, 140, 20),
+    pygame.Rect(305, 315, 450, 20),
+    pygame.Rect(305, 217, 20, 230),
+    pygame.Rect(150, 217, 175, 20),
+    pygame.Rect(150, 225, 20, 110),
+    pygame.Rect(75, 315, 95, 20),
+    pygame.Rect(0, 427, 225, 20),
+    pygame.Rect(225, 315, 20, 132),
+    pygame.Rect(75, 540, 345, 20),
+    pygame.Rect(400, 425, 20, 132),
+    pygame.Rect(420, 425, 250, 20),
+    pygame.Rect(650, 215, 200, 20),
+    pygame.Rect(750, 315, 20, 245),
+    pygame.Rect(475, 540, 275, 20),
+    pygame.Rect(650, 540, 20, 135),
+    pygame.Rect(400, 540, 20, 135),
+    pygame.Rect(650, 655, 200, 20),
+    pygame.Rect(400, 655, 180, 20),
+    pygame.Rect(75, 540, 20, 275),
+    pygame.Rect(235, 540, 20, 275),
+    pygame.Rect(155, 650, 20, 300),
+    pygame.Rect(235, 815, 150, 20),
+    pygame.Rect(320, 650, 20, 95),
+    pygame.Rect(325, 725, 150, 20),
+    pygame.Rect(455, 725, 20, 200),
+    pygame.Rect(560, 660, 20, 240),
+    pygame.Rect(650, 725, 20, 240),
+    pygame.Rect(650, 725, 125, 20),
+    pygame.Rect(755, 725, 20, 100),
+
 ]
-
-
 
 # Set up the game
 clock = pygame.time.Clock()
@@ -143,9 +179,9 @@ while running:
 
     # Display the winning message
     if won:
-        font = pygame.font.SysFont(None, 48)
-        message = font.render("YOU WIN!", True, BLACK)
-        screen.blit(message, (220, 180))
+        font = pygame.font.SysFont(None, 75)
+        message = font.render("LEVEL 1: COMPLETED!", True, BLACK)
+        screen.blit(message, (125, 425))
 
     # Update the display
     pygame.display.flip()
